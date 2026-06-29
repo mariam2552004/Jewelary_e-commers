@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Gemora</title>
+
+    <link rel="stylesheet" href="css/style_register.css">
+    <link rel="stylesheet" href="css/all.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="bg-black px-8 py-4">
+        <a href="index.html">
+            <img src="./image/Logo.png" alt="Logo" class="h-20 ">
+        </a>
+    </nav>
+
+    <div class="flex justify-center items-center py-10">
+
+        <div class="bg-white shadow-lg rounded-xl p-8 w-full max-w-2xl">
+
+            <form id="registerForm">
+
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+
+                    <div>
+                        <label class="block mb-2 font-medium">
+                            First Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="firstName"
+                            placeholder="Enter first name"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-yellow-500">
+                    </div>
+
+                    <div>
+                        <label class="block mb-2 font-medium">
+                            Last Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="lastName"
+                            placeholder="Enter last name"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-yellow-500">
+                    </div>
+
+                </div>
+
+                <!-- Email -->
+                <div class="mb-4">
+                    <label class="block mb-2 font-medium">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter email"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-yellow-500">
+                </div>
+
+                <!-- Password -->
+                <div class="mb-6">
+                    <label class="block mb-2 font-medium">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter password"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-yellow-500">
+                </div>
+
+                <!-- Button -->
+                <button
+                    type="button"
+                    onclick="register()"
+                    class="w-full bg-yellow-500 text-black py-3 rounded-lg font-semibold hover:bg-yellow-400 transition">
+                    Register
+                </button>
+
+                <p class="text-center mt-4">
+                    Have an account?
+                    <a href="Login.html" class="text-yellow-600 font-semibold">
+                        Login
+                    </a>
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

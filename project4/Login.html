@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Gemora</title>
+
+    <link rel="stylesheet" href="css/style_login.css">
+    <link rel="stylesheet" href="css/all.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="bg-black px-8 py-4">
+        <a href="index.html">
+            <img src="./image/Logo.png" alt="Logo" class="h-20">
+        </a>
+    </nav>
+
+    <!-- Login Form -->
+    <div class="flex justify-center items-center mt-16">
+
+        <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
+
+            <form id="loginForm">
+
+                <div class="mb-4">
+                    <label for="email" class="block mb-2 font-medium">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter email"
+                        required
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-yellow-500">
+                </div>
+
+                <div class="mb-4">
+                    <label for="password" class="block mb-2 font-medium">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter password"
+                        required
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-yellow-500">
+                </div>
+
+                <div class="flex items-center mb-6">
+                    <input
+                        type="checkbox"
+                        id="rememberMe"
+                        class="mr-2">
+
+                    <label for="rememberMe">
+                        Remember Me
+                    </label>
+                </div>
+
+                <button
+                    type="button"
+                    onclick="login()"
+                    class="w-full bg-yellow-500 text-black py-3 rounded-lg font-semibold hover:bg-yellow-400 transition">
+                    Login
+                </button>
+
+                <p class="text-center mt-4">
+                    Don't have an account?
+                    <a href="register.html" class="text-yellow-600 font-semibold">
+                        Register
+                    </a>
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
