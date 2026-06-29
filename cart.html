@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart & Favorites</title>
+    <link rel="stylesheet" href="css/all.css" />
+    <link rel="stylesheet" href="css/style_cart.css" />
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+    <nav class="bg-black  shadow-sm px-6 py-3 flex items-center justify-between">
+        <a href="loggedin.html" class="flex items-center">
+            <img src="./image/Logo.png" alt="Logo" class="h-20 object-contain">
+        </a>
+        
+        <div class="flex items-center gap-4">
+            <span id="usernameDisplay" class="text-white  font-medium"></span>
+            
+            <div class="relative">
+                <a href="#" class="text-yellow-500 hover:text-yellow-400 flex items-center gap-1 p-2 transition-colors" id="cartDropdown">
+                    <i class="fas fa-shopping-cart text-xl"></i> 
+                    <span id="cartCount" class="bg-yellow-500 text-black text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                </a>
+                
+                <div id="cartDropdownMenu" class="hidden absolute right-0 mt-2 w-80 bg-white rounded-2xl shadow-xl border border-gray-100 z-50 p-4">
+                    <div id="cartDropdownItems" class="max-h-60 overflow-y-auto space-y-2"></div>
+                    <div class="border-t border-gray-100 my-3"></div>
+                    <a class="block text-center text-sm font-semibold text-indigo-600 hover:text-indigo-700 transition-colors" href="cart.html">View All Products</a>
+                </div>
+            </div>
+            
+            <button onclick="logout()" class="px-4 py-2 text-sm font-medium text-yellow-500 border border-yellow-500 rounded-xl hover:bg-yellow-500 hover:text-black transition-colors">Logout</button>
+        </div>
+    </nav>
+
+    <div class="max-w-6xl mx-auto px-4 mt-10">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+            <i class="fas fa-shopping-bag text-indigo-600"></i> Your Shopping Cart
+        </h2>
+        <div class="flex flex-wrap -mx-3 items-center" id="cart-items"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 mt-8 bg-white p-6 rounded-3xl shadow-sm border border-gray-100 text-center">
+        <h3 class="text-xl md:text-2xl font-extrabold text-gray-800">
+            Total Price: <span class="text-indigo-600">$<span id="totalPrice">0</span></span>
+        </h3>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 my-8">
+        <hr class="border-gray-200">
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 mb-16">
+        <h3 class="text-2xl font-bold text-center text-gray-800 mb-8 flex items-center justify-center gap-2">
+            <i class="fas fa-heart text-red-500"></i> Favorite Items
+        </h3>
+        <div id="favorite-items" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        window.onload = function() {
+            loadCartAndFavorites();
+            renderCartItems();
+            renderFavoriteItems();
+            updateCartDropdown();
+            const cartIcon = document.querySelector('.fas.fa-shopping-cart');
+            if (cartIcon) {
+                cartIcon.addEventListener('click', toggleCartDropdown);
+            }
+        }
+    </script>
+</body>
+</html>

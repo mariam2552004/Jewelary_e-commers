@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessories Store</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/all.css"/>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+    <nav class="bg-black  shadow-sm px-6 py-3 flex items-center justify-between">
+        <a href="#" class="flex items-center">
+            <img src="./image/Logo.png" alt="Logo" class="h-20 object-contain">
+        </a>
+        
+        <div class="flex items-center gap-4">
+            <span id="usernameDisplay" class="text-white  font-medium"></span>
+            
+            <div class="relative">
+                <a href="#" class="text-yellow-500 hover:text-yellow-400 flex items-center gap-1 p-2 transition-colors" d="cartDropdown">
+                    <i class="fas fa-shopping-cart text-xl"></i> 
+                    <span id="cartCount" class="bg-yellow-500 text-black text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                </a>
+                
+                <div id="cartDropdownMenu" class="hidden absolute right-0 mt-2 w-80 bg-white rounded-2xl shadow-xl border border-gray-100 z-50 p-4">
+                    <div id="cartDropdownItems" class="max-h-60 overflow-y-auto space-y-2"></div>
+                    <div class="border-t border-gray-100 my-3"></div>
+                    <a class="block text-center text-sm font-semibold text-indigo-600 hover:text-indigo-700 transition-colors" href="cart.html">View All Products</a>
+                </div>
+            </div>
+            
+            <button onclick="logout()" class="px-4 py-2 text-sm font-medium text-yellow-500 border border-yellow-500 rounded-xl hover:bg-yellow-500 hover:text-black transition-colors">Logout</button>
+        </div>
+    </nav>
+
+    <div class="max-w-6xl mx-auto px-4 mt-10">
+        <div class="flex flex-col md:flex-row gap-4 bg-white p-4 rounded-3xl shadow-sm border border-gray-100">
+            <div class="w-full md:w-1/4">
+                <select id="searchType" class="w-full h-12 px-4 rounded-2xl bg-gray-50 border border-gray-200 text-gray-700 focus:outline-none focus:border-indigo-500 transition-colors text-sm">
+                    <option value="name">Search by Product Name</option>
+                    <option value="category">Search by Category</option>
+                </select>
+            </div>
+            <div class="w-full md:w-2/4 flex-1">
+                <input type="text" id="searchBox" class="w-full h-12 px-4 rounded-2xl bg-gray-50 border border-gray-200 text-gray-700 placeholder-gray-400 focus:outline-none focus:border-indigo-500 transition-colors text-sm" placeholder="Search for jewelry, rings, bracelets...">
+            </div>
+            <div class="w-full md:w-1/4">
+                <button class="w-full h-12 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-2xl shadow transition-colors" onclick="searchProducts()">Search</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 mt-10" id="products-container">
+        <div class="flex flex-wrap -mx-4 justify-center" id="products-row"></div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

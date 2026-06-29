@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemora</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="bg-white">
+
+    <nav class="flex items-center justify-between px-8 py-4 bg-black">
+
+        <a href="#">
+            <img src="./image/Logo.png" alt="Logo" class="h-24 w-50">
+        </a>
+
+        <div class="flex gap-4">
+
+            <button
+                onclick="redirectTo('login.html')"
+                class="border-2 border-yellow-500 text-yellow-500 px-5 py-2 rounded-lg hover:bg-yellow-500 hover:text-black transition duration-300">
+                Login
+            </button>
+
+            <button
+                onclick="redirectTo('register.html')"
+                class="bg-yellow-500 text-black px-5 py-2 rounded-lg hover:bg-yellow-400 transition duration-300">
+                Register
+            </button>
+
+        </div>
+
+    </nav>
+
+    <!-- Search Section -->
+    <div class="max-w-7xl mx-auto px-4 mt-8">
+
+        <div class="flex flex-col md:flex-row gap-4">
+
+            <!-- Search Type -->
+            <div class="md:w-3/12">
+                <select
+                    id="searchType"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2">
+                    <option value="name">Search by Product Name</option>
+                    <option value="category">Search by Category</option>
+                </select>
+            </div>
+
+            <!-- Search Input -->
+            <div class="md:w-7/12">
+                <input
+                    type="text"
+                    id="searchBox"
+                    placeholder="Search..."
+                    onkeyup="searchProducts()"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2">
+            </div>
+
+            <!-- Search Button -->
+            <div class="md:w-2/12">
+                <button
+                    onclick="searchProducts()"
+                    class="w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition duration-300">
+                    Search
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Products -->
+    <div class="max-w-7xl mx-auto px-4 mt-10">
+
+       <div id="products-row" class="flex flex-wrap -mx-4 justify-center">
+    </div>
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
